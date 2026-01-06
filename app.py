@@ -8,7 +8,7 @@ import requests
 from typing import Dict, List, Optional
 from datetime import datetime
 from flask import Flask, request, jsonify
-rom flask_cors import CORS
+from flask_cors import CORS
 from dotenv import load_dotenv
 
 load_dotenv()
