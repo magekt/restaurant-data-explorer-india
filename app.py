@@ -7,8 +7,8 @@ import json
 import requests
 from typing import Dict, List, Optional
 from datetime import datetime
-from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
+from flask import Flask, request, jsonify
+rom flask_cors import CORS
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -89,7 +89,7 @@ CORS(app)
 @app.route('/')
 def index():
     """Serve the HTML frontend"""
-    return render_template('index.html')
+    return jsonify({"message": "Restaurant Data Explorer API", "version": "1.0", "endpoints": {"POST /api/restaurants": "Fetch restaurant data", "GET /api/health": "Health check"}})
 
 @app.route('/api/restaurants', methods=['POST'])
 def get_restaurants():
